@@ -17,7 +17,7 @@ echo -e "\e[1;36m2. \e[1;33mV2ray,MahsaNG,NikaNG config\e[0m"
 echo -e "\e[1;36m*****************************************"
 echo -en "\e[1;32mEnter your choice:\e[0m"
 read -r user_input
-
+termux-setup-storage
 apt update -y
 apt install xz-utils bzip2 -y
 if [ "$user_input" -eq 1 ]; then

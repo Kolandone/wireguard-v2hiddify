@@ -21,9 +21,13 @@ read -r user_input
 apt update -y
 apt install xz-utils bzip2 -y
 if [ "$user_input" -eq 1 ]; then
-    bash <(curl -fsSL https://raw.githubusercontent.com/Kolandone/wireguard-v2hiddify/main/wg.sh)
+    curl -o $PREFIX/bin/wgh https://raw.githubusercontent.com/Kolandone/wireguard-v2hiddify/main/wg.sh
+chmod +x $PREFIX/bin/wgh
+wgh
 elif [ "$user_input" -eq 2 ]; then
-    bash <(curl -fsSL https://raw.githubusercontent.com/Kolandone/wireguard-v2hiddify/main/wg1.sh)
+    curl -o $PREFIX/bin/wgv https://raw.githubusercontent.com/Kolandone/wireguard-v2hiddify/main/wg1.sh
+chmod +x $PREFIX/bin/wgv
+wgv
    else
      echo "Invalid input."
     fi
